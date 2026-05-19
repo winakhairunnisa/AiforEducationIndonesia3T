@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduAI Nusantara - Pemerataan Pendidikan 3T</title>
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-pink: #FF85A2;      /* Pink lucu tapi lembut */
+            --dark-pink: #D4416F;         /* Pink tua untuk kesan profesional */
+            --light-pink: #FFF0F3;        /* Latar belakang soft pink */
+            --accent-purple: #7952B3;     /* Sentuhan ungu untuk melengkapi AI vibes */
+            --text-dark: #2B2D42;         /* Warna teks utama agar mudah dibaca */
+            --bg-white: #FFFFFF;
+        }
+
+        body {
+            background-color: var(--light-pink);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--bg-white);
+            padding: 1.2rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(255, 133, 162, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-pink);
+        }
+
+        .logo span {
+            color: var(--accent-purple);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--dark-pink);
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5rem 8%;
+            background: linear-gradient(135deg, var(--bg-white) 60%, var(--light-pink) 100%);
+            min-height: 80vh;
+        }
+
+        .hero-content {
+            max-width: 550px;
+        }
+
+        .badge {
+            background-color: var(--light-pink);
+            color: var(--dark-pink);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(212, 65, 111, 0.2);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .hero h1 span {
+            color: var(--dark-pink);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--dark-pink);
+            color: var(--bg-white);
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(212, 65, 111, 0.3);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: #b8325c;
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            width: 45%;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Ilustrasi AI Bulat Lucu */
+        .ai-illustration {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, var(--primary-pink), var(--accent-purple));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 5rem;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(255, 133, 162, 0.4);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 8%;
+            background-color: var(--bg-white);
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .features h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-pink);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .card {
+            background-color: var(--bg-white);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 133, 162, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-pink);
+        }
+
+        .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: var(--light-pink);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav { padding: 1rem 5%; }
+            .nav-links { display: none; } /* Menyederhanakan tampilan mobile */
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 4rem 5%;
+            }
+            .hero-content { max-width: 100%; margin-bottom: 3rem; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero-image { width: 100%; }
+            .ai-illustration { width: 200px; height: 200px; font-size: 3.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <nav>
+        <div class="logo">EduAI<span>.3T</span></div>
+        <ul class="nav-links">
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#">Solusi</a></li>
+            <li><a href="#">Dampak</a></li>
+            <li><a href="#">Tentang Kami</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="badge">Kecerdasan Buatan untuk Negeri</span>
+            <h1>Menembus Batas, Mengajar Hingga <span>Pelosok</span></h1>
+            <p>Menjembatani kesenjangan kualitas pendidikan di daerah Terdepan, Terluar, dan Tertinggal (3T) di Indonesia melalui solusi asisten guru berbasis AI yang adaptif, ringan, dan dapat diakses offline.</p>
+            <a href="#" class="cta-btn">Jelajahi Solusi</a>
+        </div>
+        <div class="hero-image">
+            <!-- Representasi AI maskot/icon yang lucu tapi clean -->
+            <div class="ai-illustration">🤖</div>
+        </div>
+    </section>
+
+    <!-- Fitur / Cara Kerja AI di 3T -->
+    <section class="features">
+        <h2>Bagaimana AI Membantu?</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="icon">📡</div>
+                <h3>Layanan Tanpa Sinyal</h3>
+                <p>Model AI yang dikompresi agar mampu berjalan di perangkat lokal/komputer sekolah tanpa ketergantungan penuh pada koneksi internet internet yang stabil.</p>
+            </div>
+            <div class="card">
+                <div class="icon">👩‍🏫</div>
+                <h3>Asisten Guru Virtual</h3>
+                <p>Membantu guru setempat menyusun materi ajar yang kreatif, modul latihan soal, dan otomatisasi administrasi kelas yang hemat waktu.</p>
+            </div>
+            <div class="card">
+                <div class="icon">🧩</div>
+                <h3>Kurikulum Adaptif</h3>
+                <p>AI menganalisis tingkat pemahaman siswa secara personal agar materi pelajaran bisa melambat atau mempercepat sesuai kemampuan anak daerah.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 EduAI Nusantara. Dibuat dengan penuh kepedulian untuk masa depan anak bangsa.</p>
+    </footer>
+
+</body>
+</html>
